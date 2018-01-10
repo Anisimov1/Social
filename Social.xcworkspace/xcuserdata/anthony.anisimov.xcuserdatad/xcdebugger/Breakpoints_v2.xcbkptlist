@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Social/Controller/FeedVC.swift"
-            timestampString = "537249042.478675"
+            timestampString = "537249714.043415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "FeedVC"
             landmarkType = "3">
          </BreakpointContent>
