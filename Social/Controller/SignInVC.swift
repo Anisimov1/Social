@@ -59,8 +59,10 @@ class SignInVC: UIViewController {
                 print("TONY: Unable to authenticate with Firebase - \(String(describing: error))")
             } else {
                 print("TONY: Successfully authenticated with Firebase")
+                if let user = user {
                 let userData = ["provider": credential.provider] //added to create user data
-                self.completeSignIn(id: Key_UID, userData: userData as! Dictionary<String, String>) //keychain (user.uid is same as Key_UID)
+                self.completeSignIn(id: user.uid, userData: userData) //keychain 
+                }
             }
         })
     }
@@ -71,16 +73,20 @@ class SignInVC: UIViewController {
             Auth.auth().signIn(withEmail: email, password: pass, completion: { (user, error) in
                 if error == nil {
                     print("TONY: Email User authenticated with firebase")
-                    let userData = ["provider": user?.providerID] //added for creating user data
-                    self.completeSignIn(id: Key_UID, userData: userData as! Dictionary<String, String>) //keychain (user.uid is same as Key_UID)
+                    if let user = user {
+                    let userData = ["provider": user.providerID] //added for creating user data
+                    self.completeSignIn(id: user.uid, userData: userData) //keychain
+                    }
                 } else {
                     Auth.auth().createUser(withEmail: email, password: pass, completion: { (user, error) in
                         if error != nil {
                             print("TONY: Unable to authenticate with Firebase using email")
                         } else {
                             print("TONY: Successfully authenticated with Firebase")
-                            let userData = ["provider": user?.providerID] //added for creating user data
-                            self.completeSignIn(id: Key_UID, userData: userData as! Dictionary<String, String>) //keychain (user.uid is same as Key_UID)
+                            if let user = user {
+                            let userData = ["provider": user.providerID] //added for creating user data
+                            self.completeSignIn(id: user.uid, userData: userData) //keychain
+                            }
                         }
                     })
                 }
