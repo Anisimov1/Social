@@ -59,7 +59,8 @@ class SignInVC: UIViewController {
                 print("TONY: Unable to authenticate with Firebase - \(String(describing: error))")
             } else {
                 print("TONY: Successfully authenticated with Firebase")
-                self.completeSignIn(id: Key_UID) //keychain (user.uid is same as Key_UID)
+                let userData = ["provider": credential.provider] //added to create user data
+                self.completeSignIn(id: Key_UID, userData: userData as! Dictionary<String, String>) //keychain (user.uid is same as Key_UID)
             }
         })
     }
@@ -70,21 +71,25 @@ class SignInVC: UIViewController {
             Auth.auth().signIn(withEmail: email, password: pass, completion: { (user, error) in
                 if error == nil {
                     print("TONY: Email User authenticated with firebase")
+                    let userData = ["provider": user?.providerID] //added for creating user data
+                    self.completeSignIn(id: Key_UID, userData: userData as! Dictionary<String, String>) //keychain (user.uid is same as Key_UID)
                 } else {
                     Auth.auth().createUser(withEmail: email, password: pass, completion: { (user, error) in
                         if error != nil {
                             print("TONY: Unable to authenticate with Firebase using email")
                         } else {
                             print("TONY: Successfully authenticated with Firebase")
-                            self.completeSignIn(id: Key_UID) //keychain (user.uid is same as Key_UID)
+                            let userData = ["provider": user?.providerID] //added for creating user data
+                            self.completeSignIn(id: Key_UID, userData: userData as! Dictionary<String, String>) //keychain (user.uid is same as Key_UID)
                         }
                     })
                 }
             } )
         }
     }
-    func completeSignIn(id: String) {
+    func completeSignIn(id: String, userData: Dictionary<String, String>) {
         //keychain
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData) //creating user data/ passing it in
             let keychainResult = KeychainWrapper.standard.set(id, forKey: Key_UID) //(user.uid is same as Key_UID)
         print("TONY: Data saved to keychain \(keychainResult)")
         performSegue(withIdentifier: "goToFeed", sender: nil)
