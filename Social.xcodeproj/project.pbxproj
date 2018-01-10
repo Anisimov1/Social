@@ -25,6 +25,7 @@
 		51B0E0971FF83E3C0050F8D5 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0E0961FF83E3C0050F8D5 /* CircleView.swift */; };
 		51B0E0991FF881EC0050F8D5 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0E0981FF881EC0050F8D5 /* PostCell.swift */; };
 		51B0E09C2005A7DB0050F8D5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0E09B2005A7DB0050F8D5 /* DataService.swift */; };
+		51B0E09E2005C0A80050F8D5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0E09D2005C0A80050F8D5 /* Post.swift */; };
 		B8747E69439F1999BE28AC1A /* Pods_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3279AEC1B3216B7DE14A152F /* Pods_Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		51B0E0961FF83E3C0050F8D5 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		51B0E0981FF881EC0050F8D5 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		51B0E09B2005A7DB0050F8D5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		51B0E09D2005C0A80050F8D5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		596784D6F981E7E3AFB01111 /* Pods-Social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social/Pods-Social.debug.xcconfig"; sourceTree = "<group>"; };
 		8288182F4658E80AA9AF8361 /* Pods-Social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social/Pods-Social.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 		51B0E07F1FF344760050F8D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				51B0E09D2005C0A80050F8D5 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				51B0E0971FF83E3C0050F8D5 /* CircleView.swift in Sources */,
 				51B0E0891FF4A31A0050F8D5 /* FancyField.swift in Sources */,
 				51B0E06D1FF33E900050F8D5 /* SignInVC.swift in Sources */,
+				51B0E09E2005C0A80050F8D5 /* Post.swift in Sources */,
 				51B0E0871FF4A0D50050F8D5 /* RoundBtn.swift in Sources */,
 				51B0E06B1FF33E900050F8D5 /* AppDelegate.swift in Sources */,
 				51B0E09C2005A7DB0050F8D5 /* DataService.swift in Sources */,
